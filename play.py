@@ -25,14 +25,16 @@ Tell:  +989170118221   		  Mail: PowerInfoSSL@Gmail.com
 
 import sys,os
 from glob import glob
-
+import random
 
 
 f=glob('*.mp3')
-print '\n\n\n\n              F\n\n\n\n'
-print f,'\n\n\n\n'
+#print '\n\n\n\n              F\n\n\n\n'
+#print f,'\n\n\n\n'
 while True:
-	for i in f:
-		print '\n\n        I  \n\n',i,'\n\n\n'
-		print 'mplayer ' + str(i)
-		os.system('mplayer \'' + str(i)+'\'')
+    h=random.randrange(len(f))
+    print '\n\n            Playing ' + str(h) + ' from ' + str(len(f)) + '\n\n'
+    print '          '+str(f[h]) + '\n'
+    #print "@"*20
+    os.system("mplayer -really-quiet '" + str(f[h]) + "'")
+
